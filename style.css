@@ -1,0 +1,297 @@
+
+body {
+   font-family: 'DM Serif Text', serif;
+   overflow-x: hidden;
+}
+em {
+   font-style: normal;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+} 
+
+/* Layout */
+.s-layout {
+   display: flex;
+   width: 100%;
+}
+
+.s-layout__content {
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+}
+
+/* Sidebar */
+.s-sidebar__trigger {
+   z-index: 2;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 4em;
+   
+}
+
+.s-sidebar__trigger > i {
+   display: inline-block;
+   margin: 20px;
+   color: rgb(255,78,78);
+   font-size: 2em;
+}
+/* .fa {
+   color: rgb(255,78,78);
+font-size: 2em !important;
+} */
+.s-sidebar__nav {
+   position: fixed;
+   left: -15em;
+   overflow: hidden;
+   transition: all .3s ease-in;
+   width: 15em;
+   height: 100%;
+   background: #fff;
+   color:#000;
+   top: 8em;
+}
+
+.s-sidebar__nav:hover,
+.s-sidebar__nav:focus,
+.s-sidebar__trigger:focus + .s-sidebar__nav,
+.s-sidebar__trigger:hover + .s-sidebar__nav {
+   left: 0;
+}
+
+.s-sidebar__nav ul {
+   position: absolute;
+   top: 5em;
+   left: 0;
+   margin: 0;
+   padding: 0;
+   width: 15em;
+}
+
+.s-sidebar__nav ul li {
+   width: 100%;
+}
+
+.s-sidebar__nav-link {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+   height: 4em;
+}
+
+.s-sidebar__nav-link em {
+   position: absolute;
+   top: 50%;
+   left: 4em;
+   transform: translateY(-50%);
+}
+.s-sidebar__nav-link > i {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: inline-block;
+   width: 4em;
+   height: 4em;
+}
+
+.s-sidebar__nav-link > i::before {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.btncart {
+   background-color: rgb(255,78,78);
+   color: #fff;
+   border: 1px solid rgb(255,78,78);
+   border-radius: 20px;
+   padding: 10px 40px;
+   margin: 30px 0;
+   cursor: pointer;
+}
+.sidetext {
+   width: 30%;
+   font-size: 14px;
+   color: #525256fc;
+}
+.sidetext p {
+   padding: 5em;
+}
+.sidetext p::after
+{
+ content: '';
+ border-bottom: 3px solid rgb(255,78,78);
+ border-radius: 2px;
+ width: 4em;
+ padding-top: 10px;
+ display: block;
+}
+.contextrow {
+   display: flex;
+   position: relative;
+   top: 5em;
+}
+.menu {
+   margin: 5em 0;
+
+}
+.menudishes img {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   margin: 20px;
+   object-fit: cover;
+   object-position: center right;
+}
+.menudishes {
+   display: flex;
+}
+.box {
+   /* width: 15%; */
+   text-align: center;
+   margin: 0 10px;
+   border-radius: 15px;
+   /* box-shadow: 0 10px 10px -5px; */
+   box-shadow: 2px 4px 20px -8px;
+  
+}
+.box p {
+   font-size: 14px;
+   font-weight: 600;
+   letter-spacing: 0.9px;
+}
+.row1, .row2 {
+   display: contents;
+}
+   
+   
+/* Mobile First */
+@media only screen and  (min-width: 768px) {
+   .s-layout__content {
+      margin-left: 6em;
+   }
+   
+   /* Sidebar */
+   .s-sidebar__trigger {
+      width: 4em;
+   }
+   .s-sidebar__nav {
+
+      left: 0;
+   }
+}
+
+@media only screen and  (min-width: 768px) {
+   /* Sidebar */
+   .s-sidebar__trigger {
+      display: none
+   }
+   
+   .s-sidebar__nav {
+      width: 15em;
+      top: 9em;
+   }
+   
+   .s-sidebar__nav ul {
+      top: 1.3em;
+   }
+  
+   .sidebar-title h3 {
+      font-size: 3em;
+      margin-left: 40px !important;
+      margin: 0;
+   
+   }
+   .sidebar-title h3 span {
+      display: block;
+   }
+   .mainel {
+      width: 50%;
+      font-size: 35px;
+   }
+}
+@media only screen and (max-width: 600px) {
+   
+   .s-layout {
+      display: block;
+      width: 100%;
+  }
+   .sidebar-title h3 {
+      font-size: 2em;
+      margin: 0 40%;
+      margin-top: -8px;
+      position: fixed;
+   
+   }
+   .sidebar-title h3 span {
+      display: none;
+   }
+   .s-sidebar__nav {
+      width: 15em;
+      top: 3em;
+    background: rgb(255,78,78);
+   
+   }
+   .s-sidebar__nav ul {
+      top: 0;
+   }
+   .mainel {
+      width: 100%;
+      font-size: 20px ;
+   }
+   .s-layout__content {
+      display: block;
+      position: relative;
+      top: 4em;
+      left: 1em;
+      margin-right: 1em;
+   }
+   .contextrow {
+      display: block;
+      height: 10em;
+      top: 0;
+  }
+
+  .mainel {
+   width: 100%;
+   font-size: 20px;
+   }
+   .sidetext {
+      width: 100%;
+      font-size: 16px;
+      color: #525256fc;
+      position: relative;
+      top: 26em;
+   }
+   .sidetext p {
+      padding-left: 1em;
+   }
+   .menu {
+      margin:0;
+  } 
+   .box {
+      width: 100%;
+   }
+   .menudishes {
+      display:block;
+  }
+   .row1, .row2 {
+      display: flex;
+      margin: 20px 0;
+   }
+   .ex{
+      display: none;
+   }
+}
+   
+   
+   
+   
+   
+   
